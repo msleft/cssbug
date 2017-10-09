@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>子元素绝对定位, 父元素border-radius, 造成safari无效</title>
+<meta charset="UTF-8">
+<meta name="robots" content="all" />
+<meta name="author" content="" />
+<meta name="Copyright" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<style type="text/css">
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, font, img, ins, q, s, samp, small, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, button,textarea {margin:0; padding:0;}
+fieldset,img {border:0;}
+ul,ol,dl {list-style:none;}
+table {border-collapse:collapse; }
+td {vertical-align:top;}
+html {font-size:62.5%;}
+body {font:12px/15px Roboto,arial,sans-serif,Arial,Tahoma,verdana,sans-serif; text-align:left;color:#000000;}
+.clearfix:after, #header:after, .tabs .tab ul:after, .jobfilter:after {content:""; display:block; height:0; clear:both; visibility:hidden; }
+
+.wrap {margin:20px auto;padding:10px 0;border:1px solid #ff0033;}	
+.demo {margin:10px 0;border:1px solid #ff3366;padding:10px;}
+.hide {display:none;}
+
+
+.wrap {}
+.nav {background:#ff0099;width:200px;float:left;}
+.main {background:#cccc00;margin:0 300px 0 200px;}
+.aside {background:#00ccff;width:300px;position:relative;left:-100px;}
+
+.demo {overflow:hidden;width:100px;height:100px;border-radius:40px;margin:20px;padding:0;position:relative;
+/*
+-webkit-backface-visibility: visible;-webkit-perspective: 1px;
+*/
+/*
+-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+*/
+/*
+-webkit-transform: translateZ(0);
+-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+*/
+/*
+-webkit-transform: translateZ(0);
+-webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+*/
+-webkit-transform: translateZ(0);
+-webkit-mask-image: -webkit-radial-gradient(circle, #fff, #000);
+}
+.demo span {display:block;width:80px;margin:15px;}
+.box {width:200px;height:200px;background:#ff00ff;position:absolute;}
+/* 或 
+.box {width:200px;height:200px;background:#ff00ff;position:absolute;-webkit-transform: translateZ(0);}
+*/
+
+</style>
+</head>
+<body>
+<div class="demo"><div class="box"><span>子元素绝对定位, 父元素border-radius, 造成safari无效</span></div></div>
+</body>
+</html>
